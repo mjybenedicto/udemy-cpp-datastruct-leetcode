@@ -66,18 +66,39 @@ class LinkedList {
             cout << "Length: " << length << endl;
         }
 
-		void append(int value) {
+        void append(int value) {
             Node* newNode = new Node(value);
-
-            if(length == 0) {
+            if (length == 0) {
                 head = newNode;
                 tail = newNode;
-            }
-            else {
+            } else {
                 tail->next = newNode;
                 tail = newNode;
             }
             length++;
+        }
+
+        void deleteLast() {
+            // If Linked List is empty
+            if(length == 0) return;
+
+            Node* temp = head;
+            if(length == 1){
+                head = nullptr;
+                tail = nullptr;
+            }
+            else {
+                Node* pre = head;
+    
+                while(temp->next){
+                    pre = temp;
+                    temp = temp->next;
+                }
+                tail = pre;
+                tail->next = nullptr;
+            }
+            delete temp;
+            length--;
         }
 };
 
@@ -86,28 +107,46 @@ class LinkedList {
 int main() {
         
     LinkedList* myLinkedList = new LinkedList(1);
-
     myLinkedList->append(2);
 
-    myLinkedList->getHead();
-    myLinkedList->getTail();
-    myLinkedList->getLength();
 
-    cout << endl << "Linked List:" << endl;
-    myLinkedList->printList();  
+    cout << "LL before deleteLast():\n";
+    myLinkedList->printList();
+
+
+    myLinkedList->deleteLast();
+    cout << "\n\nLL after 1st deleteLast():\n";
+    myLinkedList->printList();
+
+
+    myLinkedList->deleteLast();
+    cout << "\n\nLL after 2nd deleteLast():\n";
+    myLinkedList->printList();
+
+
+    myLinkedList->deleteLast();
+    cout << "\n\nLL after 3rd deleteLast():\n";
+    myLinkedList->printList();
 
 
     /*  
         EXPECTED OUTPUT:
     	----------------
-        Head: 1
-        Tail: 2
-        Length: 2
-
-        Linked List:
+        LL before deleteLast():
         1
         2
 
+
+        LL after 1st deleteLast():
+        1
+
+
+        LL after 2nd deleteLast():
+
+
+        LL after 3rd deleteLast():
+        
     */
         
 }
+
