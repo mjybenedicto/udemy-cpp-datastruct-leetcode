@@ -72,20 +72,6 @@ class LinkedList {
                 currentNode->next = newNode;
             }
         }
-
-        //   +======================================================+
-        //   |                 WRITE YOUR CODE HERE                 |
-        //   | Description:                                         |
-        //   | - Convert binary number in list to decimal           |
-        //   | - Return type: int                                   |
-        //   |                                                      |
-        //   | Tips:                                                |
-        //   | - Use a single pointer: 'current'                    |
-        //   | - Initialize an integer 'num' to 0                   |
-        //   | - Loop through the list                              |
-        //   | - Use the formula: num = num * 2 + current->value    |
-        //   | - Return 'num' as the decimal value                  |
-        //   +======================================================+
         
         int binaryToDecimal(){
             Node* current = head;

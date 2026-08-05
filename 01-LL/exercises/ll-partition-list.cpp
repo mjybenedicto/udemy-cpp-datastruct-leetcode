@@ -81,21 +81,6 @@ class LinkedList {
             length++;
         }
 
-        //   +======================================================+
-        //   |                 WRITE YOUR CODE HERE                 |
-        //   | Description:                                         |
-        //   | - Partition list around value x                      |
-        //   | - Return type: void                                  |
-        //   |                                                      |
-        //   | Tips:                                                |
-        //   | - Create two dummy nodes for two new lists           |
-        //   | - One list for nodes less than x                     |
-        //   | - Another list for nodes greater or equal to x       |
-        //   | - Loop through original list                         |
-        //   | - Assign nodes to new lists based on value           |
-        //   | - Merge the two new lists                            |
-        //   | - Update the original list's head                    |
-        //   +======================================================+
         void partitionList(int x){
             if(head == nullptr) return;
             
